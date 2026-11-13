@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Francisco Rivadeneyra</title>
+<meta name="description" content="Francisco Rivadeneyra, economist at the Bank of Canada. Research on money, payments and technology: instant payments, digital currencies, and AI and quantum computing in finance.">
+<link rel="canonical" href="https://rivadeneyra.github.io/">
+<meta property="og:url" content="https://rivadeneyra.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Francisco Rivadeneyra">
+<meta property="og:description" content="Francisco Rivadeneyra, economist at the Bank of Canada. Research on money, payments and technology: instant payments, digital currencies, and AI and quantum computing in finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+/* Layout: "Ledger". One reading column, 1080px. Each list is a ledger: a mono year column, the entry beside it, hairline rules between rows; a grey band for selected work and a dark band to close. */
+:root {
+  --paper: #FFFFFF;
+  --band: #F5F7F9;
+  --card: #FFFFFF;
+  --ink: #16202E;
+  --ink-2: #3D4756;
+  --muted: #5A6472;
+  --rule: #E3E6EA;
+  --pill: #D5DAE0;
+  --accent: #1F5F8B;
+  --accent-ink: #123E5C;
+  --pop: #8E2330;
+  --foot: #16202E;
+  --foot-ink: #E8ECF1;
+  --foot-muted: #B8C1CC;
+  --foot-link: #9CC8E8;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --col: 1080px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F151D; --band: #151D27; --card: #111923; --ink: #E6EBF1; --ink-2: #C2CAD4; --muted: #9AA6B4;
+    --rule: #26303C; --pill: #33404E; --accent: #86BDE3; --accent-ink: #B5D8F0; --pop: #F2A1A8;
+    --foot: #0A0F15; --foot-ink: #E8ECF1; --foot-muted: #9AA6B4; --foot-link: #9CC8E8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F151D; --band: #151D27; --card: #111923; --ink: #E6EBF1; --ink-2: #C2CAD4; --muted: #9AA6B4;
+  --rule: #26303C; --pill: #33404E; --accent: #86BDE3; --accent-ink: #B5D8F0; --pop: #F2A1A8;
+  --foot: #0A0F15; --foot-ink: #E8ECF1; --foot-muted: #9AA6B4; --foot-link: #9CC8E8;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+em { font-style: italic; }
+
+.wrap {
+  max-width: var(--col);
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.mono-label {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Top bar */
+.top { border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between; padding-block: 18px; }
+.brand { font-family: var(--display); font-size: 20px; font-weight: 500; color: var(--ink); }
+.brand:hover { color: var(--ink); text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; }
+.nav a { color: var(--ink-2); }
+.nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero .wrap { padding-block: 88px 64px; display: flex; flex-direction: column; gap: 0; }
+.hero .mono-label { margin-bottom: 20px; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 7vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 28px; }
+.hero .lead { font-size: 19px; line-height: 1.6; max-width: 640px; margin-bottom: 20px; }
+.hero .sub { font-size: 17px; color: var(--ink-2); max-width: 640px; margin-bottom: 32px; }
+.profiles { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.profiles a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--pill); border-radius: 999px; font-size: 14px; color: var(--ink);
+}
+.profiles a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* Selected work */
+.band { background: var(--band); border-block: 1px solid var(--rule); }
+.band .wrap { padding-block: 64px; }
+.band h2 { font-family: var(--display); font-weight: 500; font-size: 30px; margin-bottom: 32px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; }
+.card {
+  display: flex; flex-direction: column; gap: 12px; min-width: 0;
+  background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 28px; color: var(--ink);
+}
+.card:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
+.card .venue { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); }
+.card .ctitle { font-family: var(--display); font-size: 23px; line-height: 1.25; font-weight: 500; }
+.card .note { font-size: 15px; color: var(--ink-2); }
+
+/* Research */
+.research .wrap { padding-block: 80px 24px; }
+.research h2 { font-family: var(--display); font-weight: 500; font-size: 40px; margin-bottom: 8px; }
+.research .intro { color: var(--muted); font-size: 15px; margin-bottom: 48px; }
+.group { display: flex; flex-wrap: wrap; gap: 16px 48px; padding-bottom: 48px; }
+.group > div:first-child { flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; }
+.group h3 { line-height: 1.4; }
+.group .gnote { font-size: 14px; color: var(--muted); }
+.ledger { flex: 999 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.ledger > li { display: flex; gap: 20px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.ledger > li:last-child { border-bottom: 1px solid var(--rule); }
+.yr { flex: 0 0 44px; font-family: var(--mono); font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.entry { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.entry .t { font-weight: 500; color: var(--ink); }
+.entry a.t:hover { color: var(--accent); }
+.entry .m { font-size: 14px; color: var(--muted); }
+.entry .d { font-family: var(--display); font-size: 17px; line-height: 1.45; color: var(--pop); max-width: 68ch; margin-top: 6px; }
+.entry .n { font-size: 14px; color: var(--ink-2); }
+.entry .l { display: flex; flex-wrap: wrap; gap: 4px 16px; font-family: var(--mono); font-size: 12.5px; margin-top: 2px; }
+
+/* Talks and about share the label-column layout */
+.split { border-top: 1px solid var(--ink); }
+.split .wrap { padding-block: 64px 80px; display: flex; flex-wrap: wrap; gap: 24px 48px; }
+.split .label { flex: 0 0 200px; }
+.split h2 { font-family: var(--display); font-weight: 500; font-size: 34px; line-height: 1.15; }
+.talks { flex: 999 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.talks > li { display: flex; flex-wrap: wrap; gap: 2px 20px; padding: 14px 0; border-top: 1px solid var(--rule); }
+.talks > li:last-child { border-bottom: 1px solid var(--rule); }
+.talks .yr { flex: 0 0 48px; }
+.talks .what { flex: 999 1 300px; min-width: 0; }
+.talks .role { color: var(--muted); }
+.talks .go { flex: 0 0 auto; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+
+.about-body { flex: 999 1 560px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px 48px; align-items: start; }
+.about-text { display: flex; flex-direction: column; gap: 16px; max-width: 62ch; }
+.speaker { margin-top: 12px; padding: 20px 22px; border: 1px solid var(--rule); border-radius: 6px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.speaker p { font-size: 15.5px; }
+.copy {
+  font: inherit; font-size: 14px; min-height: 44px; padding: 0 16px; cursor: pointer;
+  background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px;
+}
+.copy:hover { background: var(--accent); color: var(--paper); }
+.facts { list-style: none; margin: 0; padding: 0; }
+.facts li { padding-block: 12px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 2px; }
+.facts li:last-child { border-bottom: 1px solid var(--rule); }
+.facts .k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+/* Footer */
+.foot { background: var(--foot); color: var(--foot-ink); }
+.foot .wrap { padding-block: 64px; display: flex; flex-wrap: wrap; gap: 32px 64px; justify-content: space-between; }
+.foot .contact { flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.foot h2 { font-family: var(--display); font-weight: 400; font-size: 32px; color: var(--foot-ink); margin-bottom: 4px; }
+.foot a { color: var(--foot-link); }
+.foot a:hover { color: var(--foot-ink); }
+.foot .email { font-family: var(--mono); font-size: 15px; user-select: all; }
+.foot .place { font-size: 15px; color: var(--foot-muted); }
+.foot .fine { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.6; color: var(--foot-muted); }
+
+@media (max-width: 720px) {
+  .hero .wrap { padding-block: 56px 48px; }
+  .band .wrap, .split .wrap { padding-block: 48px 56px; }
+  .research .wrap { padding-block: 56px 16px; }
+  .research h2 { font-size: 34px; }
+  .group { padding-bottom: 36px; }
+  .about-body { grid-template-columns: 1fr; }
+  .card { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: no-preference) {
+  a, .copy, .card, .profiles a { transition: color .15s ease, background-color .15s ease, border-color .15s ease; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Francisco Rivadeneyra</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#talks">Talks &amp; media</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="name">
+    <div class="wrap">
+      <p class="mono-label">Economist working on money, payments and technology</p>
+      <h1 id="name">Francisco Rivadeneyra</h1>
+      <p class="lead">I study money and payments, and how new technology changes them. I am Senior Director, Payments Policy and Research at the Bank of Canada.</p>
+      <p class="sub">My research covers payment system design, digital currencies, and the use of AI and quantum computing in finance and central banking. I hold a PhD in economics from the University of Chicago.</p>
+      <ul class="profiles" aria-label="Profiles">
+        <li><a href="https://www.bankofcanada.ca/profile/francisco-rivadeneyra/">Bank of Canada profile</a></li>
+        <li><a href="https://scholar.google.ca/citations?user=DvehtrEAAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><a href="https://ideas.repec.org/e/pri168.html">RePEc</a></li>
+        <li><a href="https://orcid.org/0000-0003-1423-0467">ORCID</a></li>
+        <li><a href="https://www.linkedin.com/in/frivadeneyra/">LinkedIn</a></li>
+        <li><a href="cv.pdf">CV (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="sel-h">
+    <div class="wrap">
+      <h2 id="sel-h">Selected work</h2>
+      <div class="cards">
+        <a class="card" href="https://www.bankofcanada.ca/2026/11/staff-working-paper-2026-41/">
+          <span class="venue">Bank of Canada SWP 2026-41</span>
+          <span class="ctitle">Instant Payments, Fraud, and Optimal Consumer Protection</span>
+          <span class="note">How access pricing, payment eligibility, prevention incentives and liability rules together set fraud risk in instant payment systems.</span>
+        </a>
+        <a class="card" href="https://www.bankofcanada.ca/2026/03/staff-working-paper-2026-10/">
+          <span class="venue">Bank of Canada SWP 2026-10</span>
+          <span class="ctitle">Public vs. Private Payment Platforms: Market Impacts and Optimal Policy</span>
+          <span class="note">Optimal pricing for a welfare-maximizing public platform that competes with a private one in a two-sided market.</span>
+        </a>
+        <a class="card" href="https://ideas.repec.org/p/bca/bocawp/21-6.html">
+          <span class="venue">Bank of Canada SWP 2021-6 · Under review</span>
+          <span class="ctitle">Eggs in One Basket: Security and Convenience of Digital Currencies</span>
+          <span class="note">We examine the security and convenience tradeoff in digital currencies and the welfare effects of differing industry structures used to manage them.</span>
+        </a>
+        <a class="card" href="https://doi.org/10.1287/mnsc.2023.00314">
+          <span class="venue">Management Science · 2024</span>
+          <span class="ctitle">Improving the Efficiency of Payments Systems Using Quantum Computing</span>
+          <span class="note">An algorithm run on a hybrid quantum-annealing solver reorders payments so a system needs less liquidity without adding much delay.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="research" id="research" aria-labelledby="res-h">
+    <div class="wrap">
+      <h2 id="res-h">Research</h2>
+      <p class="intro">Newest first. Bank of Canada papers link to the Bank's page; journal articles to the publisher.</p>
+
+      <div class="group">
+        <div><h3 class="mono-label">Journal articles and chapters</h3></div>
+        <ol class="ledger">
+          <li><span class="yr">2025</span><span class="entry"><a class="t" href="https://doi.org/10.1145/3691326">Estimating Policy Functions in Payment Systems Using Reinforcement Learning</a><span class="m">with Pablo S. Castro, Ajit Desai, Han Du and Rodney Garratt · <em>ACM Transactions on Economics and Computation</em> 13(1): 1–31</span><span class="d">We use RL methods to estimate the policy functions of participants in payments systems.</span><span class="n">Best Empirical Paper, NeurIPS 2020 Workshop on Machine Learning for Economic Policy</span><span class="l"><a href="https://www.bankofcanada.ca/2021/02/staff-working-paper-2021-7/">Working paper</a></span></span></li>
+          <li><span class="yr">2024</span><span class="entry"><a class="t" href="https://doi.org/10.1287/mnsc.2023.00314">Improving the Efficiency of Payments Systems Using Quantum Computing</a><span class="m">with Christopher McMahon, Donald McGillivray, Ajit Desai, Jean-Paul Lam, Thomas Lo, Danica Marsden and Vladimir Skavysh · <em>Management Science</em> 70(10): 7325–7341</span><span class="d">We develop an algorithm, run on a hybrid quantum-annealing solver, that reorders payments to cut the liquidity a payment system needs without adding much delay.</span><span class="l"><a href="https://www.bankofcanada.ca/2022/12/staff-working-paper-2022-53/">Working paper</a></span></span></li>
+          <li><span class="yr">2023</span><span class="entry"><span class="t">The Potential Competitive Effects of CBDC on Deposits, Payments and Bank Business Models</span><span class="m">with Youming Liu, Edona Reshidi and Andrew Usher · in K. Stylianou, M. Iacovides and B. Lundqvist (eds.), <em>Fintech Competition: Law, Policy, and Market Organisation</em>, Hart Publishing</span></span></li>
+          <li><span class="yr">2022</span><span class="entry"><a class="t" href="https://www.risk.net/journal-of-financial-market-infrastructures/7956394/payment-coordination-and-liquidity-efficiency-in-wholesale-payments-systems">Payment Coordination and Liquidity Efficiency in Wholesale Payments Systems</a><span class="m">with Nellie Zhang · <em>Journal of Financial Market Infrastructures</em> 10(3): 31–68</span><span class="d">We simulate Lynx and show that letting payments offset pools liquidity: about $10 billion of collateral is enough to settle all payments on time.</span><span class="l"><a href="https://www.bankofcanada.ca/2022/02/staff-discussion-paper-2022-3/">Working paper</a></span></span></li>
+          <li><span class="yr">2021</span><span class="entry"><a class="t" href="https://cepr.org/publications/books-and-reports/p348">Central Bank Digital Currency, Bank Intermediation and Payments; An Overview of the Bank of Canada CBDC Project</a><span class="m">with Jonathan Chiu · two chapters in D. Niepelt (ed.), <em>Central Bank Digital Currency: Considerations, Projects, Outlook</em>, CEPR Press</span></span></li>
+          <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://www.risk.net/journal-of-financial-market-infrastructures/7708026/should-the-central-bank-issue-e-money">Should the Central Bank Issue E-money?</a><span class="m">with Charles M. Kahn and Tsz-Nga (Russell) Wong · <em>Journal of Financial Market Infrastructures</em> 8(4)</span><span class="d">We evaluate if new technologies like DLT and mobile computing have changed the tradeoffs in the public provision of payments media in the form of central bank tokens or accounts.</span><span class="l"><a href="https://ideas.repec.org/p/bca/bocawp/18-58.html">Working paper</a></span></span></li>
+          <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://doi.org/10.3138/cpp.2019-010">A Policy Framework for E-Money</a><span class="m">with Mohammad Davoodalhosseini · <em>Canadian Public Policy</em> 46(1): 94–106</span><span class="d">Framework to evaluate the trade-offs that central banks face in the decision to issue new forms of e-money.</span><span class="l"><a href="https://ideas.repec.org/p/bca/bocadp/18-5.html">Working paper</a></span></span></li>
+          <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://doi.org/10.1108/JFEP-07-2019-0149">Alternative Futures for Government of Canada Debt Management</a><span class="m">with Corey Garriott, Sophie Lefebvre, Guillaume Nolin and Adrian Walton · <em>Journal of Financial Economic Policy</em> 12(4): 659–685</span><span class="l"><a href="https://ideas.repec.org/p/bca/bocadp/18-15.html">Working paper</a></span></span></li>
+          <li><span class="yr">2018</span><span class="entry"><a class="t" href="https://www.risk.net/journal-of-financial-market-infrastructures/5415141/fmic-2-special-issue-introduction-a-policy-view-on-developments-in-the-field-of-financial-market-infrastructures">A Policy View on Developments in the Field of Financial Market Infrastructures</a><span class="m">with Biliana Alexandrova-Kabadjova, Evangelos Benos, Jo Braithwaite, Jorge Cruz Lopez, Ronald Heijmans, Mark Manning and David Murphy · <em>Journal of Financial Market Infrastructures</em> 6(2/3)</span></span></li>
+          <li><span class="yr">2018</span><span class="entry"><a class="t" href="https://link.springer.com/chapter/10.1007/978-3-319-90245-6_14">Government Bond Clienteles and Yields</a><span class="m">with Jianjian Jin and Jesús Sierra · in <em>Advances in the Practice of Public Investment Management</em>, Palgrave Macmillan (also co-editor of the volume)</span><span class="d">We document the price impact that different clienteles have on government bond yields.</span></span></li>
+          <li><span class="yr">2017</span><span class="entry"><a class="t" href="https://doi.org/10.1111/jmcb.12427">Financial Development, Credit, and Business Cycles</a><span class="m">with Tiago Pinheiro and Marc Teignier · <em>Journal of Money, Credit and Banking</em> 49(7): 1653–1665</span><span class="d">We show that financial development has a non-monotonic effect on the degree of amplification of credit cycles: they are most severe at intermediate levels of financial development.</span><span class="l"><a href="https://ideas.repec.org/p/bca/bocawp/13-4.html">Working paper</a></span></span></li>
+        </ol>
+      </div>
+
+      <div class="group">
+        <div><h3 class="mono-label">Working papers</h3></div>
+        <ol class="ledger">
+          <li><span class="yr">2026</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2026/11/staff-working-paper-2026-41/">Instant Payments, Fraud, and Optimal Consumer Protection</a><span class="m">with Yuteng Cheng and Charles M. Kahn · Bank of Canada Staff Working Paper 2026-41</span><span class="d">We show how access pricing, payment eligibility, prevention incentives and liability rules jointly determine fraud risk in instant payment systems, under central or decentralized governance.</span></span></li>
+          <li><span class="yr">2026</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2026/03/staff-working-paper-2026-10/">Public vs. Private Payment Platforms: Market Impacts and Optimal Policy</a><span class="m">with Youming Liu and Edona Reshidi · Bank of Canada Staff Working Paper 2026-10</span><span class="d">We derive optimal pricing for a welfare-maximizing public payment platform, such as a CBDC or fast payment system, that competes with a private platform in a two-sided market.</span></span></li>
+          <li><span class="yr">2023</span><span class="entry"><a class="t" href="https://www.bis.org/publ/work1089.htm">Intraday Liquidity Around the World</a><span class="m">with Biliana Alexandrova Kabadjova, Evangelos Benos, James Chapman and 15 others · BIS Working Paper 1089</span><span class="d">Using cross-country data on large-value payments, we measure how efficiently banks use intraday liquidity and find that they manage it strategically.</span></span></li>
+          <li><span class="yr">2021</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocawp/21-6.html">Eggs in One Basket: Security and Convenience of Digital Currencies</a><span class="m">with Charles M. Kahn and Tsz-Nga (Russell) Wong · Bank of Canada Staff Working Paper 2021-6; Federal Reserve Bank of St. Louis Working Paper 2020-032</span><span class="d">We examine the security and convenience tradeoff in digital currencies (agents balancing the risk of theft of a large account with the cost to safeguarding a large number of passwords) and the welfare effects of differing industry structures used to manage them.</span><span class="n">Under review, <em>Journal of Cybersecurity</em></span></span></li>
+        </ol>
+      </div>
+
+      <div class="group">
+        <div><h3 class="mono-label">Policy papers and notes</h3><p class="gnote">Bank of Canada staff discussion papers and analytical notes.</p></div>
+        <ol class="ledger">
+          <li><span class="yr">2024</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2024/09/staff-discussion-paper-2024-13/">Ecosystem Models for a Central Bank Digital Currency: Analysis Framework and Potential Models</a><span class="m">with Youming Liu, Edona Reshidi, Oleksandr Shcherbakov and André Stenzel · Staff Discussion Paper 2024-13</span></span></li>
+          <li><span class="yr">2024</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2024/07/staff-discussion-paper-2024-11/">The Role of Public Money in the Digital Age</a><span class="m">with Scott Hendry and Alejandro García · Staff Discussion Paper 2024-11</span></span></li>
+          <li><span class="yr">2023</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2023/02/staff-discussion-paper-2023-4/">Central Bank Digital Currencies and Banking: Literature Review and New Questions</a><span class="m">with James Chapman, Jonathan Chiu, Mohammad Davoodalhosseini, Janet Hua Jiang and Yu Zhu · Staff Discussion Paper 2023-4</span></span></li>
+          <li><span class="yr">2021</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocadp/21-11.html">The Positive Case for a CBDC</a><span class="m">with Andrew Usher, Edona Reshidi and Scott Hendry · Staff Discussion Paper 2021-11</span></span></li>
+          <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2020/10/staff-analytical-note-2020-21/">Security and Convenience of a Central Bank Digital Currency</a><span class="m">with Charles M. Kahn · Staff Analytical Note 2020-21</span></span></li>
+          <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocadp/20-9.html">Liquidity Usage and Payment Delay Estimates of the New Canadian High Value Payments System</a><span class="m">with Nellie Zhang · Staff Discussion Paper 2020-9</span><span class="d">We present extensive simulation results of Lynx, the new Canadian high value payments system, under a variety of configurations and payment demand scenarios.</span></span></li>
+          <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/2020/02/staff-analytical-note-2020-4/">CBDC and Monetary Policy</a><span class="m">with Mohammad Davoodalhosseini and Yu Zhu · Staff Analytical Note 2020-4</span><span class="d">Improving the conduct of monetary policy is unlikely to be the main motivation for central banks to issue a central bank digital currency (CBDC). Although CBDC could allow more complex transfer schemes or the ability to break below the zero lower bound, we find these benefits might be small or difficult to realize in practice.</span></span></li>
+          <li><span class="yr">2017</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocadp/17-10.html">Fintech: Is This Time Different? A Framework for Assessing Risks and Opportunities for Central Banks</a><span class="m">with Meyer Aaron and Samantha Sohal · Staff Discussion Paper 2017-10</span></span></li>
+        </ol>
+      </div>
+
+      <div class="group">
+        <div><h3 class="mono-label">Debt, reserves and data</h3><p class="gnote">Earlier work on Government of Canada debt management and foreign exchange reserves.</p></div>
+        <ol class="ledger">
+          <li><span class="yr">2018</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocatr/112.html">The Government of Canada Debt Securities Data Set</a><span class="m">with Jeffrey Gao and Gabriel Rodriguez Rondon · Technical Report 112</span></span></li>
+          <li><span class="yr">2014</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/wp-content/uploads/2014/05/boc-review-spring14-pomorski.pdf">The Canadian Dollar as a Reserve Currency</a><span class="m">with Lukasz Pomorski and Eric Wolfe · <em>Bank of Canada Review</em>, Spring</span></span></li>
+          <li><span class="yr">2013</span><span class="entry"><a class="t" href="https://www.bankofcanada.ca/wp-content/uploads/2013/05/boc-review-spring13-rivadeneyra.pdf">Modelling the Asset-Allocation and Liability Strategy for Canada's Foreign Exchange Reserves</a><span class="m">with Jianjian Jin, Narayan Bulusu and Lukasz Pomorski · <em>Bank of Canada Review</em>, Spring</span></span></li>
+          <li><span class="yr">2012</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocadp/12-5.html">The U.S.-Dollar Supranational Zero-Coupon Curve</a><span class="m">Staff Discussion Paper 2012-5</span></span></li>
+          <li><span class="yr">2011</span><span class="entry"><a class="t" href="https://ideas.repec.org/p/bca/bocadp/11-11.html">A Model of the EFA Liabilities</a><span class="m">with Oumar Dissou · Staff Discussion Paper 2011-11</span></span></li>
+          <li><span class="yr">Code</span><span class="entry"><a class="t" href="https://github.com/bankofcanada/CDSM">Canadian Debt Strategy Model</a><span class="m">Source code, Bank of Canada on GitHub</span></span></li>
+        </ol>
+      </div>
+
+      <div class="group">
+        <div><h3 class="mono-label">Early papers</h3><p class="gnote">In Spanish, in <em>Gaceta de Economía</em> (ITAM).</p></div>
+        <ol class="ledger">
+          <li><span class="yr">2009</span><span class="entry"><span class="t">Monopolies and Economic Growth</span><span class="m">with Pablo Peña</span></span></li>
+          <li><span class="yr">2004</span><span class="entry"><a class="t" href="http://individual.utoronto.ca/marcog/attachment/PPPGaceta.pdf">An Empirical Analysis of the Law of One Price in Mexico</a><span class="m">with Marco González-Navarro</span></span></li>
+          <li><span class="yr">2002</span><span class="entry"><span class="t">Trade Creation and Trade Diversion of Preferential Agreements: New Estimates for NAFTA</span><span class="m">with José M. Chávez</span></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="split" id="talks" aria-labelledby="tlk-h">
+    <div class="wrap">
+      <div class="label"><h2 id="tlk-h">Talks &amp; media</h2></div>
+      <ul class="talks">
+        <li><span class="yr">2024</span><span class="what">Central Banking: “Well-designed CBDC can fulfil role of cash” <span class="role">· Coverage of The Role of Public Money in the Digital Age</span></span><a class="go" href="https://www.centralbanking.com/fintech/cbdc/7961650/well-designed-cbdc-can-fulfil-role-of-cash-boc-paper">Press</a></li>
+        <li><span class="yr">2024</span><span class="what">The Future of Money, Munk School of Global Affairs &amp; Public Policy, University of Toronto <span class="role">· Panel</span></span></li>
+        <li><span class="yr">2023</span><span class="what">2nd Bank of Canada–Riksbank Conference on the Economics of CBDC, Stockholm <span class="role">· Scientific and organising committee; chair, Session VI: CBDC and Banking</span></span><a class="go" href="https://www.riksbank.se/globalassets/media/konferenser/2023/2nd-boc-riksbank-conference-on-the-economics-of-cbdc-programme.pdf">Programme</a></li>
+        <li><span class="yr">2021</span><span class="what">CEMLA Regional Conference on Payments and Market Infrastructures <span class="role">· Scientific committee</span></span><a class="go" href="https://www.cemla.org/actividades/2021-final/2021-06-regional-conference-payments-markets-infrastructures.html">Event</a></li>
+        <li><span class="yr">2021</span><span class="what">CBDC: New Motivations, Design Challenges and Cooperation <span class="role">· IV Meeting of the CEMLA FinTech Forum</span></span><a class="go" href="https://www.cemla.org/actividades/2021-final/2021-03-iv-fintech-forum/Session%201.2.%20Slides%20IV%20FinTech%20Forum_F.%20Rivadeneyra_BoC.pdf">Slides</a></li>
+        <li><span class="yr">2021</span><span class="what">Two chapters on the Bank of Canada CBDC project, with Jonathan Chiu <span class="role">· CEPR Press eBook, edited by Dirk Niepelt</span></span><a class="go" href="https://cepr.org/publications/books-and-reports/p348">Book</a></li>
+        <li><span class="yr">2020</span><span class="what">CBDC Forum, FinTech4Good and World Digital Economy Council <span class="role">· Talk</span></span></li>
+        <li><span class="yr">2020</span><span class="what">Seamless: Future of Fintech (virtual) <span class="role">· Speaker</span></span><a class="go" href="https://www.terrapinn.com/virtual/seamless-future-of-fintech/speaker-francisco-RIVADENEYRA.stm">Event</a></li>
+        <li><span class="yr">2020</span><span class="what">CoinDesk: “CBDC design needs to address risk to users, says Bank of Canada” <span class="role">· Coverage of Security and Convenience of a CBDC</span></span><a class="go" href="https://www.coindesk.com/tech/2020/10/06/cbdc-design-needs-to-address-risk-to-users-says-bank-of-canada/">Press</a></li>
+        <li><span class="yr">2020</span><span class="what">The PayPod, Payments Canada, Episode 15: Current state of central bank digital currencies <span class="role">· With Rod Garratt</span></span><a class="go" href="https://www.payments.ca/episode-15-current-state-central-bank-digital-currencies">Listen</a></li>
+        <li><span class="yr">2019</span><span class="what">First Stellar Foundation Conference, Mexico City <span class="role">· Panel on central bank digital currency</span></span></li>
+        <li><span class="yr">2019</span><span class="what">II Meeting of the CEMLA FinTech Forum, Mexico City <span class="role">· Panel</span></span></li>
+        <li><span class="yr">2018</span><span class="what">Artificial Intelligence in Central Banks, inovaBra AI Forum, São Paulo <span class="role">· Panel</span></span><a class="go" href="http://videolectures.net/inovaBraforum2018_panel_organizational_structure/">Video</a></li>
+        <li><span class="yr">2018</span><span class="what">IMF–Georgetown IIEL Crypto Asset Research and Policy Conference, Washington <span class="role">· Panel</span></span></li>
+        <li><span class="yr">2018</span><span class="what">Atlanta Fed Conference on the Financial Stability Implications of New Technology <span class="role">· Talk</span></span></li>
+        <li><span class="yr">2018</span><span class="what">5th Bank of Canada–Payments Canada Fall Payments Workshop <span class="role">· Co-organiser</span></span></li>
+        <li><span class="yr">2017</span><span class="what">Distributed Ledger Technologies and E-money, FMI Conference II, De Nederlandsche Bank, Amsterdam <span class="role">· Panel</span></span></li>
+        <li><span class="yr">2015</span><span class="what">The Market for Strips in Canada, OECD Working Party on Debt Management, Paris <span class="role">· Talk</span></span></li>
+        <li><span class="yr">2013</span><span class="what">Structural Changes in the Investor Base Composition, OECD Working Party on Debt Management, Paris <span class="role">· Talk</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="split" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="label"><h2 id="about-h">About</h2></div>
+      <div class="about-body">
+        <div class="about-text">
+          <p>My early work at the Bank of Canada was on the Government of Canada's debt management and foreign exchange reserves, including the models the Bank and the Department of Finance use to weigh cost against risk.</p>
+          <p>I later led the Bank's CBDC and fintech policy and research: a research programme on digital currencies, the 2023 Bank of Canada–Riksbank conference on the economics of CBDC, and experiments applying machine learning and quantum computing to payment system data.</p>
+          <p>Today I lead the policy function of the Payments and Regulatory Oversight department, which anticipates emerging issues in payments and grounds the Bank's strategic choices in economic research and technical experimentation.</p>
+          <div class="speaker">
+            <p class="mono-label">Short bio for event organisers</p>
+            <p id="bio-short">Francisco Rivadeneyra is Senior Director, Payments Policy and Research at the Bank of Canada, where he leads the policy function of the Payments and Regulatory Oversight department. His work covers payment system design, digital money, and the use of AI and quantum computing in finance. He previously led the Bank's CBDC and fintech policy and research, and earlier worked on Government of Canada debt and reserves management. He holds a PhD in economics from the University of Chicago.</p>
+            <button class="copy" id="copy-bio" type="button">Copy bio</button>
+          </div>
+        </div>
+        <ul class="facts">
+          <li><span class="k">Current position</span>Senior Director, Payments Policy and Research, Bank of Canada</li>
+          <li><span class="k">Education</span>PhD (2009) and MA (2005) in Economics, University of Chicago; BA in Economics, ITAM (2003)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Get in touch</h2>
+      <p class="email"><a href="mailto:riva@bankofcanada.ca">riva@bankofcanada.ca</a></p>
+      <p><a href="https://www.linkedin.com/in/frivadeneyra/">LinkedIn</a></p>
+      <p class="place">Ottawa, Canada</p>
+    </div>
+    <div class="fine">
+      <p>Views expressed on this site and in linked work are my own and do not necessarily reflect those of the Bank of Canada.</p>
+      <p>Last updated November 2026.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-bio');
+  var bio = document.getElementById('bio-short');
+  if (!btn || !bio) return;
+  btn.addEventListener('click', function () {
+    var text = bio.textContent.trim();
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy bio'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(bio);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected, press Ctrl+C';
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
