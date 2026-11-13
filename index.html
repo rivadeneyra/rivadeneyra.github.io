@@ -85,9 +85,7 @@ em { font-style: italic; }
 
 /* Top bar */
 .top { border-bottom: 1px solid var(--rule); }
-.top .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between; padding-block: 18px; }
-.brand { font-family: var(--display); font-size: 20px; font-weight: 500; color: var(--ink); }
-.brand:hover { color: var(--ink); text-decoration: none; }
+.top .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: flex-end; padding-block: 18px; }
 .nav { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; }
 .nav a { color: var(--ink-2); }
 .nav a:hover { color: var(--ink); }
@@ -195,7 +193,6 @@ em { font-style: italic; }
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">Francisco Rivadeneyra</a>
     <nav class="nav" aria-label="Sections">
       <a href="#research">Research</a>
       <a href="#talks">Talks &amp; media</a>
@@ -380,7 +377,7 @@ em { font-style: italic; }
       <p class="place">Ottawa, Canada</p>
     </div>
     <div class="fine">
-      <p>Views expressed on this site and in linked work are my own and do not necessarily reflect those of the Bank of Canada.</p>
+      <p>Views expressed are my own and do not necessarily reflect those of the Bank of Canada.</p>
       <p>Last updated November 2026.</p>
     </div>
   </div>
@@ -407,5 +404,6 @@ em { font-style: italic; }
   });
 })();
 </script>
+<script data-goatcounter="https://rivadeneyra.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
