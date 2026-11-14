@@ -86,6 +86,9 @@ em { font-style: italic; }
 /* Top bar */
 .top { border-bottom: 1px solid var(--rule); }
 .top .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: flex-end; padding-block: 18px; }
+.site-id { margin-top: 32px; display: flex; flex-direction: column; gap: 4px; }
+.hero .site-id .mono-label { font-size: 12px; color: var(--ink-2); margin-bottom: 0; }
+.site-id .views { font-size: 13px; line-height: 1.5; color: var(--muted); }
 .nav { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; }
 .nav a { color: var(--ink-2); }
 .nav a:hover { color: var(--ink); }
@@ -142,7 +145,8 @@ em { font-style: italic; }
 .entry .l { display: flex; flex-wrap: wrap; gap: 4px 16px; font-family: var(--mono); font-size: 12.5px; margin-top: 2px; }
 
 /* Talks and about share the label-column layout */
-.split { border-top: 1px solid var(--ink); }
+.split .wrap { position: relative; }
+.split .wrap::before { content: ""; position: absolute; top: 0; left: max(20px, env(safe-area-inset-left, 0px)); right: max(20px, env(safe-area-inset-right, 0px)); border-top: 1px solid var(--rule); }
 .split .wrap { padding-block: 64px 80px; display: flex; flex-wrap: wrap; gap: 24px 48px; }
 .split .label { flex: 0 0 200px; }
 .split h2 { font-family: var(--display); font-weight: 500; font-size: 34px; line-height: 1.15; }
@@ -176,8 +180,7 @@ em { font-style: italic; }
 .foot a { color: var(--foot-link); }
 .foot a:hover { color: var(--foot-ink); }
 .foot .email { font-family: var(--mono); font-size: 15px; user-select: all; }
-.foot .place { font-size: 15px; color: var(--foot-muted); }
-.foot .fine { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.6; color: var(--foot-muted); }
+.foot .fine { flex: 0 1 auto; align-self: flex-end; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.6; color: var(--foot-muted); }
 
 @media (max-width: 720px) {
   .hero .wrap { padding-block: 56px 48px; }
@@ -210,10 +213,9 @@ em { font-style: italic; }
 <main id="top">
   <section class="hero" aria-labelledby="name">
     <div class="wrap">
-      <p class="mono-label">Economist working on money, payments and technology</p>
       <h1 id="name">Francisco Rivadeneyra</h1>
-      <p class="lead">I study money and payments, and how new technology changes them. I am Senior Director, Payments Policy and Research at the Bank of Canada.</p>
-      <p class="sub">My research covers payment system design, digital currencies, and the use of AI and quantum computing in finance and central banking. I hold a PhD in economics from the University of Chicago.</p>
+      <p class="lead">Senior Director, Payments Policy and Research at the Bank of Canada.</p>
+      <p class="sub">I study money and payments, and how new technology changes them. My research covers payment system design, digital currencies, and the use of AI and quantum computing in payments. I hold a PhD in economics from the University of Chicago.</p>
       <ul class="profiles" aria-label="Profiles">
         <li><a href="https://www.bankofcanada.ca/profile/francisco-rivadeneyra/">Bank of Canada profile</a></li>
         <li><a href="https://scholar.google.ca/citations?user=DvehtrEAAAAJ&amp;hl=en">Google Scholar</a></li>
@@ -222,6 +224,10 @@ em { font-style: italic; }
         <li><a href="https://www.linkedin.com/in/frivadeneyra/">LinkedIn</a></li>
         <li><a href="cv.pdf">CV (PDF)</a></li>
       </ul>
+      <div class="site-id">
+        <p class="mono-label">Personal research website</p>
+        <p class="views">Views expressed are my own and do not necessarily reflect those of the Bank of Canada.</p>
+      </div>
     </div>
   </section>
 
@@ -264,7 +270,7 @@ em { font-style: italic; }
         <ol class="ledger">
           <li><span class="yr">2025</span><span class="entry"><a class="t" href="https://doi.org/10.1145/3691326">Estimating Policy Functions in Payment Systems Using Reinforcement Learning</a><span class="m">with Pablo S. Castro, Ajit Desai, Han Du and Rodney Garratt · <em>ACM Transactions on Economics and Computation</em> 13(1): 1–31</span><span class="d">We use RL methods to estimate the policy functions of participants in payments systems.</span><span class="n">Best Empirical Paper, NeurIPS 2020 Workshop on Machine Learning for Economic Policy</span><span class="l"><a href="https://doi.org/10.1145/3691326">Journal</a><a href="https://www.bankofcanada.ca/2021/02/staff-working-paper-2021-7/">Working paper</a></span></span></li>
           <li><span class="yr">2024</span><span class="entry"><a class="t" href="https://doi.org/10.1287/mnsc.2023.00314">Improving the Efficiency of Payments Systems Using Quantum Computing</a><span class="m">with Christopher McMahon, Donald McGillivray, Ajit Desai, Jean-Paul Lam, Thomas Lo, Danica Marsden and Vladimir Skavysh · <em>Management Science</em> 70(10): 7325–7341</span><span class="d">We develop an algorithm, run on a hybrid quantum-annealing solver, that reorders payments to cut the liquidity a payment system needs without adding much delay.</span><span class="l"><a href="https://doi.org/10.1287/mnsc.2023.00314">Journal</a><a href="https://www.bankofcanada.ca/2022/12/staff-working-paper-2022-53/">Working paper</a></span></span></li>
-          <li><span class="yr">2023</span><span class="entry"><span class="t">The Potential Competitive Effects of CBDC on Deposits, Payments and Bank Business Models</span><span class="m">with Youming Liu, Edona Reshidi and Andrew Usher · in K. Stylianou, M. Iacovides and B. Lundqvist (eds.), <em>Fintech Competition: Law, Policy, and Market Organisation</em>, Hart Publishing</span></span></li>
+          <li><span class="yr">2023</span><span class="entry"><a class="t" href="https://www.bloomsburycollections.com/monograph-detail?docid=b-9781509963379&amp;tocid=b-9781509963379-chapter5">The Potential Competitive Effects of CBDC on Deposits, Payments and Bank Business Models</a><span class="m">with Youming Liu, Edona Reshidi and Andrew Usher · in K. Stylianou, M. Iacovides and B. Lundqvist (eds.), <em>Fintech Competition: Law, Policy, and Market Organisation</em>, Hart Publishing</span><span class="l"><a href="https://www.bloomsburycollections.com/monograph-detail?docid=b-9781509963379&amp;tocid=b-9781509963379-chapter5">Chapter</a></span></span></li>
           <li><span class="yr">2022</span><span class="entry"><a class="t" href="https://www.risk.net/journal-of-financial-market-infrastructures/7956394/payment-coordination-and-liquidity-efficiency-in-wholesale-payments-systems">Payment Coordination and Liquidity Efficiency in Wholesale Payments Systems</a><span class="m">with Nellie Zhang · <em>Journal of Financial Market Infrastructures</em> 10(3): 31–68</span><span class="d">We simulate Lynx and show that letting payments offset pools liquidity: about $10 billion of collateral is enough to settle all payments on time.</span><span class="l"><a href="https://www.risk.net/journal-of-financial-market-infrastructures/7956394/payment-coordination-and-liquidity-efficiency-in-wholesale-payments-systems">Journal</a><a href="https://www.bankofcanada.ca/2022/02/staff-discussion-paper-2022-3/">Working paper</a></span></span></li>
           <li><span class="yr">2021</span><span class="entry"><a class="t" href="https://cepr.org/publications/books-and-reports/p348">Central Bank Digital Currency, Bank Intermediation and Payments; An Overview of the Bank of Canada CBDC Project</a><span class="m">with Jonathan Chiu · two chapters in D. Niepelt (ed.), <em>Central Bank Digital Currency: Considerations, Projects, Outlook</em>, CEPR Press</span><span class="l"><a href="https://cepr.org/publications/books-and-reports/p348">Book</a></span></span></li>
           <li><span class="yr">2020</span><span class="entry"><a class="t" href="https://www.risk.net/journal-of-financial-market-infrastructures/7708026/should-the-central-bank-issue-e-money">Should the Central Bank Issue E-money?</a><span class="m">with Charles M. Kahn and Tsz-Nga (Russell) Wong · <em>Journal of Financial Market Infrastructures</em> 8(4)</span><span class="d">We evaluate if new technologies like DLT and mobile computing have changed the tradeoffs in the public provision of payments media in the form of central bank tokens or accounts.</span><span class="l"><a href="https://www.risk.net/journal-of-financial-market-infrastructures/7708026/should-the-central-bank-issue-e-money">Journal</a><a href="https://ideas.repec.org/p/bca/bocawp/18-58.html">Working paper</a></span></span></li>
@@ -379,10 +385,8 @@ em { font-style: italic; }
       <h2>Get in touch</h2>
       <p class="email"><a href="mailto:riva@bankofcanada.ca">riva@bankofcanada.ca</a></p>
       <p><a href="https://www.linkedin.com/in/frivadeneyra/">LinkedIn</a></p>
-      <p class="place">Ottawa, Canada</p>
     </div>
     <div class="fine">
-      <p>Views expressed are my own and do not necessarily reflect those of the Bank of Canada.</p>
       <p>Last updated November 2026.</p>
     </div>
   </div>
