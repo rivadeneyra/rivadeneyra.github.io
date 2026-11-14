@@ -109,12 +109,17 @@ em { font-style: italic; }
 .band h2 { font-family: var(--display); font-weight: 500; font-size: 30px; margin-bottom: 32px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; }
 .card {
-  display: flex; flex-direction: column; gap: 12px; min-width: 0;
+  position: relative; display: flex; flex-direction: column; gap: 12px; min-width: 0;
   background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 28px; color: var(--ink);
 }
 .card:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
 .card .venue { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); }
-.card .ctitle { font-family: var(--display); font-size: 23px; line-height: 1.25; font-weight: 500; }
+.card .ctitle { font-family: var(--display); font-size: 23px; line-height: 1.25; font-weight: 500; color: var(--ink); }
+.card .ctitle:hover { color: var(--ink); text-decoration: none; }
+.card .ctitle::after { content: ""; position: absolute; inset: 0; border-radius: 6px; }
+.card .ctx { position: relative; z-index: 1; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--pop); padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+.card .ctx a { color: var(--pop); text-decoration: underline; text-underline-offset: 3px; }
+.card .ctx a:hover { color: var(--ink); }
 .card .note { font-size: 15px; color: var(--ink-2); }
 
 /* Research */
@@ -225,26 +230,28 @@ em { font-style: italic; }
     <div class="wrap">
       <h2 id="sel-h">Recent and topical work</h2>
       <div class="cards">
-        <a class="card" href="https://www.bankofcanada.ca/2026/11/staff-working-paper-2026-41/">
-          <span class="venue">Bank of Canada SWP 2026-41</span>
-          <span class="ctitle">Instant Payments, Fraud, and Optimal Consumer Protection</span>
-          <span class="note">How access pricing, payment eligibility, prevention incentives and liability rules together set fraud risk in instant payment systems.</span>
-        </a>
-        <a class="card" href="https://www.bankofcanada.ca/2026/03/staff-working-paper-2026-10/">
-          <span class="venue">Bank of Canada SWP 2026-10</span>
-          <span class="ctitle">Public vs. Private Payment Platforms: Market Impacts and Optimal Policy</span>
-          <span class="note">Optimal pricing for a welfare-maximizing public platform that competes with a private one in a two-sided market.</span>
-        </a>
-        <a class="card" href="https://ideas.repec.org/p/bca/bocawp/21-6.html">
+        <article class="card">
+          <p class="ctx">In context · <a href="https://www.coindesk.com/business/2026/11/03/binance-s-usd6-3-billion-hack-began-with-a-fake-job-interview-exchange-says">Binance hot-wallet theft, Oct 2026</a></p>
           <span class="venue">Bank of Canada SWP 2021-6 · Under review</span>
-          <span class="ctitle">Eggs in One Basket: Security and Convenience of Digital Currencies</span>
+          <a class="ctitle" href="https://ideas.repec.org/p/bca/bocawp/21-6.html">Eggs in One Basket: Security and Convenience of Digital Currencies</a>
           <span class="note">We examine the security and convenience tradeoff in digital currencies and the welfare effects of differing industry structures used to manage them.</span>
-        </a>
-        <a class="card" href="https://doi.org/10.1287/mnsc.2023.00314">
+        </article>
+        <article class="card">
+          <p class="ctx">In context · <a href="https://www.bankofcanada.ca/2026/11/bank-of-canada-designates-rtr-as-a-prominent-payment-system/">Real-Time Rail goes live, Nov 2026</a></p>
+          <span class="venue">Bank of Canada SWP 2026-41</span>
+          <a class="ctitle" href="https://www.bankofcanada.ca/2026/11/staff-working-paper-2026-41/">Instant Payments, Fraud, and Optimal Consumer Protection</a>
+          <span class="note">How access pricing, payment eligibility, prevention incentives and liability rules together set fraud risk in instant payment systems.</span>
+        </article>
+        <article class="card">
+          <span class="venue">Bank of Canada SWP 2026-10</span>
+          <a class="ctitle" href="https://www.bankofcanada.ca/2026/03/staff-working-paper-2026-10/">Public vs. Private Payment Platforms: Market Impacts and Optimal Policy</a>
+          <span class="note">Optimal pricing for a welfare-maximizing public platform that competes with a private one in a two-sided market.</span>
+        </article>
+        <article class="card">
           <span class="venue">Management Science · 2024</span>
-          <span class="ctitle">Improving the Efficiency of Payments Systems Using Quantum Computing</span>
+          <a class="ctitle" href="https://doi.org/10.1287/mnsc.2023.00314">Improving the Efficiency of Payments Systems Using Quantum Computing</a>
           <span class="note">An algorithm run on a hybrid quantum-annealing solver reorders payments so a system needs less liquidity without adding much delay.</span>
-        </a>
+        </article>
       </div>
     </div>
   </section>
